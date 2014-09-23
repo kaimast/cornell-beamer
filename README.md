@@ -14,10 +14,6 @@ Edit the <code>config/metainfo.tex</code> file to include
 Compiling the Source Code
 -------------------------
 Use `pdflatex` and `bibtex` to generate a presentation.
-If you use [Texmaker](http://www.xm1math.net/texmaker/), you can include the following command to automatically compile the sources: 
-<code>pdflatex -synctex=1 -interaction=nonstopmode %.tex | bibtex % | pdflatex -synctex=1 -interaction=nonstopmode %.tex 
-| pdflatex -synctex=1 -interaction=nonstopmode %.tex</code>
-
 If you prefer the command line you can comfortably run the <code>make</code> script.
 
 Dependencies

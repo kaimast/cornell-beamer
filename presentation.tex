@@ -1,23 +1,128 @@
 \input{config/commands}
 \input{config/hyphenation}
 
+\setbeamertemplate{Cornell}[numbered]
+
 \begin{document}
 
-\begin{frame}
-  \titlepage
+\frame{\titlepage}
+
+\AtBeginSection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Outline}
+    \tableofcontents[currentsection,hideallsubsections]
+  }
+}
+
+\AtBeginSubsection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Outline}
+    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide,subsubsectionstyle=hide]
+  }
+}
+
+\AtBeginSubsubsection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Outline}
+    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+  }
+}
+
+\newcommand<>{\highlighton}[1]{%
+  \alt#2{\structure{#1}}{{#1}}
+}
+
+\newcommand{\icon}[1]{\pgfimage[height=1em]{#1}}
+
+\section*{}
+\begin{frame}{Content}
+\tableofcontents
 \end{frame}
 
-\section{First Part}
-\begin{frame}
-\frametitle{Just another page}
-\framesubtitle{Which has a subtitle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{block}{We can keep information in blocks}
+\section{Intro}
+\begin{frame}
+\frametitle{Title}
+\framesubtitle{Subtitle}
+This is a template for presentations in \LaTeX ~beamer. 
+
+A slide can have a title and a subtitle.
+\end{frame}
+
+\section{Basic Commands}
+
+\begin{frame}
+\frametitle{Basic Commands}
+\framesubtitle{\texttt{enumerate} \& \texttt{itemize}}
+If you want a 2 column layout, use the \texttt{multicols} environment:
+\begin{multicols}{2}
+\begin{enumerate}
+\item First
+\item Second
+\item Third
+\end{enumerate}
 \begin{itemize}
-\item And use bullet points
-\item To struture our data
+\item This
+\item and
+\item that
 \end{itemize}
+\end{multicols}
+\end{frame}
+
+\begin{frame}
+\frametitle{Basic Commands}
+\framesubtitle{Images}
+
+Images can be included as usual -- or with the \texttt{\textbackslash image} command.
+\end{frame}
+
+\section{Blocks}
+
+\begin{frame}
+\frametitle{Blocks}
+
+\begin{block}{Blocktitle}
+This is a normal block.
 \end{block}
+
+\begin{alertblock}{Alert}
+This is an alert block.
+\end{alertblock}
+
+
+\begin{exampleblock}{Example}
+   This is an example block.
+\end{exampleblock}
+
+\end{frame}
+
+\section{References}
+
+\begin{frame}
+\frametitle{References}
+References can be used with the \texttt{BibTeX} commands  \cite{Knuth.1986}. The list of references  will be shown at the end of the presentation with the preferred style.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%       References      %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{}
+\begin{frame}[allowframebreaks]{References}
+\def\newblock{\hskip .11em plus .33em minus .07em}
+\scriptsize
+\bibliographystyle{alpha}
+\bibliography{literature/bib}
+\normalsize
 \end{frame}
 
 \end{document}
