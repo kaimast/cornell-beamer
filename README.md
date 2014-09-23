@@ -22,6 +22,13 @@ Dependencies
 * Your favourite and up-to-date LaTeX compiler. 
 * Optional: GNU Make for the compile script.
 
+Other Resources 
+-------------------------
+
+* There is an extensive guide to Cornell colors and logos (which is also used by this template). https://brand.cornell.edu/ 
+* There also exists the "Ithaca Beamer Theme". http://www.math.cornell.edu/~gomez/Files/PDF/Ithacatemplate.pdf
+
+
 Thanks to
 -------------------------
 
