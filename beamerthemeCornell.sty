@@ -1,0 +1,75 @@
+\usetheme{Rochester}
+
+\RequirePackage{pgf}
+
+\pgfdeclareimage[width=0.2\paperwidth]{image/uniheader}{image/uniheader}
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamercovered{transparent}
+
+\beamer@headheight=0.4\paperwidth
+
+\definecolor{cornellRed}{HTML}{AF1E2D}
+\definecolor{cornellWarmGray}{HTML}{d3cec4}
+\definecolor{cornellLightGreen}{HTML}{9ca696}
+
+
+\setbeamercolor*{Title bar}{bg=cornellRed, fg=white}
+\setbeamercolor*{Location bar}{fg=cornellRed,bg=cornellWarmGray}
+\setbeamercolor*{frametitle}{parent=Title bar}
+\setbeamercolor*{block title}{bg=cornellRed,fg=white}
+\setbeamercolor*{block body}{bg=cornellWarmGray,fg=black}
+\setbeamercolor*{block title alerted}{bg=cornellRed,fg=white}
+\setbeamercolor*{block body alerted}{bg=cornellRed,fg=black}
+\setbeamercolor*{block title example}{bg=cornellWarmGray,fg=black}
+\setbeamercolor*{block body example}{bg=cornellREd,fg=black}
+\setbeamercolor*{normal text}{bg=white,fg=black}
+\setbeamercolor*{alerted text}{fg=cornellRed}
+\setbeamercolor*{section in head/foot}{bg=cornellRed,fg=white}
+\setbeamercolor*{item}{fg=cornellRed, bg=cornellWarmGray}
+
+\usecolortheme[named=cornellLightGreen]{structure}
+
+\setbeamerfont{section in head/foot}{size=\tiny,series=\normalfont}
+\setbeamerfont{frametitle}{size=\Large}
+
+%\setbeamertemplate{headline}
+\setbeamertemplate{frametitle}
+{
+  \vskip-0.2\beamer@headheight
+  \vskip-\baselineskip
+  \vskip-0.05cm
+  \hskip-0.5cm\usebeamerfont*{frametitle}\insertframetitle
+  \vskip-0.20em
+  \hskip-0.35cm\usebeamerfont*{framesubtitle}\insertframesubtitle
+}
+
+\setbeamertemplate{headline}
+{
+  \framelatex{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.25\beamer@headheight,dp=2ex]{Title bar}
+    \usebeamerfont{section in head/foot}
+    
+    \insertsectionnavigationhorizontal{5pt}{\hskip 0.5cm}{}
+    
+    \hskip 10cm
+    	\pgfuseimage{image/uniheader}
+    	
+  \end{beamercolorbox}
+  }
+  
+  \vskip 0.6cm
+}
+
+\setbeamertemplate{footline}
+{
+  \linethickness{0.2pt}
+  \framelatex{
+  \begin{beamercolorbox}[leftskip=.3cm,wd=\paperwidth,ht=0.1\beamer@headheight,sep=0.1cm]{Location bar}
+    \usebeamerfont{section in head/foot}%
+    \insertshortauthor~|~\insertshorttitle
+    \hfill
+    \insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}}
+}
+
