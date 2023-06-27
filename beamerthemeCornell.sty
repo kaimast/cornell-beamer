@@ -46,30 +46,35 @@
 
 \setbeamertemplate{headline}
 {
-  \framelatex{
+  \begingroup
+  \setlength{\fboxsep}{0pt}
+  \framebox[\textwidth]{%
   \begin{beamercolorbox}[wd=\paperwidth,ht=0.25\beamer@headheight,dp=2ex]{Title bar}
     \usebeamerfont{section in head/foot}
     
-    \insertsectionnavigationhorizontal{5pt}{\hskip 0.5cm}{}
+    \insertsectionnavigationhorizontal{0.8\paperwidth}{\hskip 0.5cm}{\hskip0pt plus 1filll}
     
     \hskip 10cm
     	\pgfuseimage{images/uniheader}
     	
-  \end{beamercolorbox}
+  \end{beamercolorbox}%
   }
-  
+  \endgroup
   \vskip 0.6cm
 }
 
 \setbeamertemplate{footline}
 {
   \linethickness{0.2pt}
-  \framelatex{
+  \begingroup
+  \framebox[\textwidth]{%
   \begin{beamercolorbox}[leftskip=.3cm,wd=\paperwidth,ht=0.08\beamer@headheight,sep=0.1cm]{Location bar}
     \usebeamerfont{section in head/foot}%
     \insertshortauthor~|~\insertshorttitle
     \hfill
     \insertframenumber/\inserttotalframenumber
-  \end{beamercolorbox}}
+  \end{beamercolorbox}%
+  }
+  \endgroup
 }
 
